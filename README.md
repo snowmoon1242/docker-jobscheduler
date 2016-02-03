@@ -5,6 +5,7 @@ SOS-JobScheduler on Docker Container
 
 ### create mysql container
 sudo docker run -v /var/lib/mysql --name jobscheduler_dbdata busybox
+
 sudo docker run --volumes-from jobscheduler_dbdata --name jobscheduler_db -e MYSQL_DATABASE=jobscheduler -e MYSQL_USER=jobscheduler -e MYSQL_PASSWORD=jobscheduler  -e MYSQL_ROOT_PASSWORD=jobscheduler -d -p 43306:3306 mysql
 
 ### run JobScheduler
